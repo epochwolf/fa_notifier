@@ -1,0 +1,5 @@
+#!/bin/bash
+# Assumes the Ubuntu rvm package is installed.
+source /usr/share/rvm/scripts/rvm
+cd "$(dirname "$0")"
+bundle exec rake $1

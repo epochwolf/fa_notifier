@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <!--[if !mso]><!-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!--<![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <!--[if (gte mso 9)|(IE)]>
+  <style type="text/css">
+    table {border-collapse: collapse;}
+  </style>
+  <![endif]-->
+  <style>
+    /* Basics */
+    body {
+        margin: 0 !important;
+        padding: 0;
+        background-color: rgb(27, 27, 29);
+        font-size: 18px;
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;
+    }
+    img {
+        border: 0;
+    }
+    a, a:hover {
+      font-weight: bold;
+      text-decoration: none;
+      color: rgb(207, 211, 235);
+    }
+    span.by{
+      font-style: italic;
+      color: rgb(119, 119, 119);
+    }
+    span.date{
+      color: rgb(207, 211, 235);
+    }
+    .wrapper {
+        width: 100%;
+        table-layout: fixed;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
+    .webkit {
+        max-width: 900px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    h3 {
+      color: rgb(214, 217, 237);
+      background-color: rgb(32, 36, 42);
+      margin: 0;
+      padding: 4px;
+    }
+    .section{
+      border: 1px solid #69697d;
+      color: #e5e5e5;
+      background-color: rgb(53, 59, 69);
+      margin-top: 14px;
+      margin-bottom: 14px;
+    }
+    .submissions-list{
+      padding: 4px;
+      text-align: center;
+    }
+    figure.submission {
+      vertical-align: top;
+      display: inline-block;
+    }
+    figure.submission figcaption{
+      padding-top: 6px;
+    }
+    #notes-section{
+      text-align: left;
+    }
+    #notes-section h3{
+      text-align: left;
+      overflow: hidden;
+    }
+    #notes-section h3 .subject{
+      display: block;
+      float: left;
+    }
+    #notes-section h3 .from{
+      display: block;
+      float: right;
+    }
+    #notes-section .body{
+      padding: 8px;
+      white-space: pre-wrap;
+      font-family: inherit;
+      font-size: inherit;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="webkit">
+      <% if submissions.any? %>
+        <div id="submissions-section" class="section">
+          <h3>Submissions</h3>
+          <div class="submissions-list list">
+            <% submissions.each do |s| %>
+              <figure class="submission" style="width: <%= s.width %>px;">
+                <a href="<%= s.view_url %>">
+                  <img src="<%= s.embed_image_data %>" width="<%= s.width %>"  height="<%= s.height %>" />
+                </a>
+                <figcaption>
+                  <a href="<%= s.view_url %>"><%= s.title %></a>
+                  <span class="by">by</span>
+                  <a href="<%= s.user_url %>"><%= s.user %></a>
+                  <span class="by">on</span>
+                  <span class="date" style="white-space: nowrap"><%= s.date %></span>
+                </figcaption>
+              </figure>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      <% if notes.any? %>
+        <div id="notes-section" class="section">
+          <% notes.each do |note| %>
+            <h3>
+              <span class="subject">
+                <a href="<%= note.url %>"><%= note.subject %></a>
+              </span>
+              <span class="from">
+                <span class="by">Sent by</span>
+                <a href="<%= note.sender_url %>"><%= note.sender %></a>
+                <span class="by">at</span>
+                <span class="date" style="white-space: nowrap"><%= note.datetime %></span>
+              </span>
+            </h3>
+            <pre class="body"><%= note.body %></pre>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+---
+# After logging in to your FurAffinity account, copy the following cookies into
+# this section. This method of authenication is used because FA has no API I
+# know of and FA's login page is protected by reCAPTCHA.
+cookies:
+  a: ""
+  b: ""
+email:
+  from: "FA Notifier <fa-notifier@example.com>"
+  to: "Your Name <yourname@fastmail.com>"
+  send_error_emails: false
+  # Configuration for https://github.com/mikel/mail
+  smtp:
+    :address: smtp.fastmail.com
+    :port: 465
+    :user_name: "yourname@fastmail.com"
+    :password: "api_key"
+    :authentication: plain
+    :enable_starttls: false
+    :ssl: true
