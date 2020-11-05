@@ -47,7 +47,7 @@ This is my personal configuration. I highly recommend not setting send_new to ru
 
 ## Footnotes
 
-1. I have only tested this project with Apple Mail, which uses webkit for rendering. According to [Campaign Monitor](https://www.campaignmonitor.com/css/style-element/style-in-head/) most clients should work. A side note, HTML email is the kind of nightmare that D&D 5E Warlocks have as Patrons<sub>3</sub>.
+1. I have only tested this project with Apple Mail, which uses webkit for rendering. According to [Campaign Monitor](https://www.campaignmonitor.com/css/style-element/style-in-head/) most clients should work. A side note, HTML email is the kind of nightmare that D&D 5E Warlocks have as Patrons<sup>3</sup>.
 2. Not the fun kind of dragons.
-3. The D&D 5E Player's Handbook has Archfey, Fiend, Great Old One, and Microsoft<sub>4</sub> as options.
+3. The D&D 5E Player's Handbook has Archfey, Fiend, Great Old One, and Microsoft<sup>4</sup> as options.
 4. Okay, Microsoft isn't an option, but it should be.
