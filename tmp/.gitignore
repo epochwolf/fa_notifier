@@ -1,0 +1,4 @@
+# The tmp folder needs to exist, but its contents should never be committed.
+# Git doesn't allow for empty directories, which is why the file is here.
+*
+!.gitignore
