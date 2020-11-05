@@ -21,13 +21,13 @@ This is a standard ruby project. I recommend using RVM or another ruby version m
 1. Checkout the repository and run bundle install under the ruby version specified in `.ruby-version`.
 2. Copy `settings.yml.example` to `settings.yml` and configure accordingly.
 3. Configure your Fur Affinity account.
-  * On the "Site Settings" page, you need to set "Date Format" to "Full date format" (Otherwise... there be dragons<sup>2</sup>)
+    * On the "Site Settings" page, you need to set "Date Format" to "Full date format" (Otherwise... there be dragons<sup>2</sup>)
 4. Test configuration.
-  1. Run `rake download` to verify the script can log in
-  2. Run `rake read` to verify the downloaded files
-  3. Run `rake send_test` to ensure email delivery
-  4. Run `rake send` to send your first summary email.
-  5. Run `reset_data` so send_new doesn't hammer Fur Affinity and your email by sending *EVERYTHING* it hasn't seen before.
+    1. Run `rake download` to verify the script can log in
+    2. Run `rake read` to verify the downloaded files
+    3. Run `rake send_test` to ensure email delivery
+    4. Run `rake send` to send your first summary email.
+    5. Run `reset_data` so send_new doesn't hammer Fur Affinity and your email by sending *EVERYTHING* it hasn't seen before.
 5. Configure cron jobs.
 
 ### Example Cron configuration.
